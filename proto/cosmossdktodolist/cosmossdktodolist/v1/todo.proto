@@ -1,0 +1,14 @@
+syntax = "proto3";
+package cosmossdktodolist.cosmossdktodolist.v1;
+
+option go_package = "cosmos-sdk-todo-list/x/cosmossdktodolist/types";
+
+// Todo defines the Todo message.
+message Todo {
+  string title = 1;
+  string description = 2;
+  bool completed = 3;
+  uint64 priority = 4;
+  int64 created_at = 5;
+  int64 updated_at = 6;
+}
