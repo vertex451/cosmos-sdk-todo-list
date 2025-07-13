@@ -74,6 +74,21 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		weightMsgCompleteTodo,
 		cosmossdktodolistsimulation.SimulateMsgCompleteTodo(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
 	))
+	const (
+		opWeightMsgDeleteTodo          = "op_weight_msg_cosmossdktodolist"
+		defaultWeightMsgDeleteTodo int = 100
+	)
+
+	var weightMsgDeleteTodo int
+	simState.AppParams.GetOrGenerate(opWeightMsgDeleteTodo, &weightMsgDeleteTodo, nil,
+		func(_ *rand.Rand) {
+			weightMsgDeleteTodo = defaultWeightMsgDeleteTodo
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgDeleteTodo,
+		cosmossdktodolistsimulation.SimulateMsgDeleteTodo(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
 
 	return operations
 }
