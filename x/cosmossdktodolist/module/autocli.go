@@ -31,6 +31,13 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
 				},
 
+				{
+					RpcMethod:      "GetTodosByStatus",
+					Use:            "get-todos-by-status [completed]",
+					Short:          "Query get-todos-by-status",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "completed"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},

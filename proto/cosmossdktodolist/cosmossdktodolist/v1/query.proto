@@ -26,6 +26,11 @@ service Query {
   rpc GetTodo(QueryGetTodoRequest) returns (QueryGetTodoResponse) {
     option (google.api.http).get = "/cosmos-sdk-todo-list/cosmossdktodolist/v1/get_todo/{id}";
   }
+
+  // GetTodosByStatus Queries a list of GetTodosByStatus items.
+  rpc GetTodosByStatus(QueryGetTodosByStatusRequest) returns (QueryGetTodosByStatusResponse) {
+    option (google.api.http).get = "/cosmos-sdk-todo-list/cosmossdktodolist/v1/get_todos_by_status/{completed}";
+  }
 }
 
 // QueryParamsRequest is request type for the Query/Params RPC method.
@@ -53,3 +58,11 @@ message QueryGetTodoRequest {
 
 // QueryGetTodoResponse defines the QueryGetTodoResponse message.
 message QueryGetTodoResponse {}
+
+// QueryGetTodosByStatusRequest defines the QueryGetTodosByStatusRequest message.
+message QueryGetTodosByStatusRequest {
+  bool completed = 1;
+}
+
+// QueryGetTodosByStatusResponse defines the QueryGetTodosByStatusResponse message.
+message QueryGetTodosByStatusResponse {}
