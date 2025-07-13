@@ -24,6 +24,13 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{},
 				},
 
+				{
+					RpcMethod:      "GetTodo",
+					Use:            "get-todo [id]",
+					Short:          "Query get-todo",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},

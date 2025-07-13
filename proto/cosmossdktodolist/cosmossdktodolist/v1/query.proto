@@ -21,6 +21,11 @@ service Query {
   rpc ListTodos(QueryListTodosRequest) returns (QueryListTodosResponse) {
     option (google.api.http).get = "/cosmos-sdk-todo-list/cosmossdktodolist/v1/list_todos";
   }
+
+  // GetTodo Queries a list of GetTodo items.
+  rpc GetTodo(QueryGetTodoRequest) returns (QueryGetTodoResponse) {
+    option (google.api.http).get = "/cosmos-sdk-todo-list/cosmossdktodolist/v1/get_todo/{id}";
+  }
 }
 
 // QueryParamsRequest is request type for the Query/Params RPC method.
@@ -40,3 +45,11 @@ message QueryListTodosRequest {}
 
 // QueryListTodosResponse defines the QueryListTodosResponse message.
 message QueryListTodosResponse {}
+
+// QueryGetTodoRequest defines the QueryGetTodoRequest message.
+message QueryGetTodoRequest {
+  uint64 id = 1;
+}
+
+// QueryGetTodoResponse defines the QueryGetTodoResponse message.
+message QueryGetTodoResponse {}
