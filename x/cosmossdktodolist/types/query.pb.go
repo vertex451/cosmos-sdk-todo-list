@@ -115,9 +115,253 @@ func (m *QueryParamsResponse) GetParams() Params {
 	return Params{}
 }
 
+// QueryListTodosRequest defines the QueryListTodosRequest message.
+type QueryListTodosRequest struct {
+}
+
+func (m *QueryListTodosRequest) Reset()         { *m = QueryListTodosRequest{} }
+func (m *QueryListTodosRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryListTodosRequest) ProtoMessage()    {}
+func (*QueryListTodosRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_61fb056d80faf2e3, []int{2}
+}
+func (m *QueryListTodosRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryListTodosRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryListTodosRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryListTodosRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryListTodosRequest.Merge(m, src)
+}
+func (m *QueryListTodosRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryListTodosRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryListTodosRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryListTodosRequest proto.InternalMessageInfo
+
+// QueryListTodosResponse defines the QueryListTodosResponse message.
+type QueryListTodosResponse struct {
+}
+
+func (m *QueryListTodosResponse) Reset()         { *m = QueryListTodosResponse{} }
+func (m *QueryListTodosResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryListTodosResponse) ProtoMessage()    {}
+func (*QueryListTodosResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_61fb056d80faf2e3, []int{3}
+}
+func (m *QueryListTodosResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryListTodosResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryListTodosResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryListTodosResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryListTodosResponse.Merge(m, src)
+}
+func (m *QueryListTodosResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryListTodosResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryListTodosResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryListTodosResponse proto.InternalMessageInfo
+
+// QueryGetTodoRequest defines the QueryGetTodoRequest message.
+type QueryGetTodoRequest struct {
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *QueryGetTodoRequest) Reset()         { *m = QueryGetTodoRequest{} }
+func (m *QueryGetTodoRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryGetTodoRequest) ProtoMessage()    {}
+func (*QueryGetTodoRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_61fb056d80faf2e3, []int{4}
+}
+func (m *QueryGetTodoRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetTodoRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetTodoRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetTodoRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetTodoRequest.Merge(m, src)
+}
+func (m *QueryGetTodoRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetTodoRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetTodoRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetTodoRequest proto.InternalMessageInfo
+
+func (m *QueryGetTodoRequest) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+// QueryGetTodoResponse defines the QueryGetTodoResponse message.
+type QueryGetTodoResponse struct {
+}
+
+func (m *QueryGetTodoResponse) Reset()         { *m = QueryGetTodoResponse{} }
+func (m *QueryGetTodoResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryGetTodoResponse) ProtoMessage()    {}
+func (*QueryGetTodoResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_61fb056d80faf2e3, []int{5}
+}
+func (m *QueryGetTodoResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetTodoResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetTodoResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetTodoResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetTodoResponse.Merge(m, src)
+}
+func (m *QueryGetTodoResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetTodoResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetTodoResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetTodoResponse proto.InternalMessageInfo
+
+// QueryGetTodosByStatusRequest defines the QueryGetTodosByStatusRequest message.
+type QueryGetTodosByStatusRequest struct {
+	Completed bool `protobuf:"varint,1,opt,name=completed,proto3" json:"completed,omitempty"`
+}
+
+func (m *QueryGetTodosByStatusRequest) Reset()         { *m = QueryGetTodosByStatusRequest{} }
+func (m *QueryGetTodosByStatusRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryGetTodosByStatusRequest) ProtoMessage()    {}
+func (*QueryGetTodosByStatusRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_61fb056d80faf2e3, []int{6}
+}
+func (m *QueryGetTodosByStatusRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetTodosByStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetTodosByStatusRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetTodosByStatusRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetTodosByStatusRequest.Merge(m, src)
+}
+func (m *QueryGetTodosByStatusRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetTodosByStatusRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetTodosByStatusRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetTodosByStatusRequest proto.InternalMessageInfo
+
+func (m *QueryGetTodosByStatusRequest) GetCompleted() bool {
+	if m != nil {
+		return m.Completed
+	}
+	return false
+}
+
+// QueryGetTodosByStatusResponse defines the QueryGetTodosByStatusResponse message.
+type QueryGetTodosByStatusResponse struct {
+}
+
+func (m *QueryGetTodosByStatusResponse) Reset()         { *m = QueryGetTodosByStatusResponse{} }
+func (m *QueryGetTodosByStatusResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryGetTodosByStatusResponse) ProtoMessage()    {}
+func (*QueryGetTodosByStatusResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_61fb056d80faf2e3, []int{7}
+}
+func (m *QueryGetTodosByStatusResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetTodosByStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetTodosByStatusResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetTodosByStatusResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetTodosByStatusResponse.Merge(m, src)
+}
+func (m *QueryGetTodosByStatusResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetTodosByStatusResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetTodosByStatusResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetTodosByStatusResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*QueryParamsRequest)(nil), "cosmossdktodolist.cosmossdktodolist.v1.QueryParamsRequest")
 	proto.RegisterType((*QueryParamsResponse)(nil), "cosmossdktodolist.cosmossdktodolist.v1.QueryParamsResponse")
+	proto.RegisterType((*QueryListTodosRequest)(nil), "cosmossdktodolist.cosmossdktodolist.v1.QueryListTodosRequest")
+	proto.RegisterType((*QueryListTodosResponse)(nil), "cosmossdktodolist.cosmossdktodolist.v1.QueryListTodosResponse")
+	proto.RegisterType((*QueryGetTodoRequest)(nil), "cosmossdktodolist.cosmossdktodolist.v1.QueryGetTodoRequest")
+	proto.RegisterType((*QueryGetTodoResponse)(nil), "cosmossdktodolist.cosmossdktodolist.v1.QueryGetTodoResponse")
+	proto.RegisterType((*QueryGetTodosByStatusRequest)(nil), "cosmossdktodolist.cosmossdktodolist.v1.QueryGetTodosByStatusRequest")
+	proto.RegisterType((*QueryGetTodosByStatusResponse)(nil), "cosmossdktodolist.cosmossdktodolist.v1.QueryGetTodosByStatusResponse")
 }
 
 func init() {
@@ -125,27 +369,40 @@ func init() {
 }
 
 var fileDescriptor_61fb056d80faf2e3 = []byte{
-	// 319 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x32, 0x4a, 0xce, 0x2f, 0xce,
-	0xcd, 0x2f, 0x2e, 0x4e, 0xc9, 0x2e, 0xc9, 0x4f, 0xc9, 0xcf, 0xc9, 0x2c, 0x2e, 0xd1, 0xc7, 0x14,
-	0x29, 0x33, 0xd4, 0x2f, 0x2c, 0x4d, 0x2d, 0xaa, 0xd4, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x52,
-	0xc3, 0x50, 0xa1, 0x87, 0x29, 0x52, 0x66, 0x28, 0x25, 0x98, 0x98, 0x9b, 0x99, 0x97, 0xaf, 0x0f,
-	0x26, 0x21, 0x5a, 0xa5, 0x44, 0xd2, 0xf3, 0xd3, 0xf3, 0xc1, 0x4c, 0x7d, 0x10, 0x0b, 0x2a, 0x2a,
-	0x93, 0x9e, 0x9f, 0x9f, 0x9e, 0x93, 0xaa, 0x9f, 0x58, 0x90, 0xa9, 0x9f, 0x98, 0x97, 0x97, 0x5f,
-	0x92, 0x58, 0x92, 0x99, 0x9f, 0x57, 0x0c, 0x95, 0xd5, 0x82, 0x18, 0xae, 0x9f, 0x94, 0x58, 0x9c,
-	0x0a, 0x71, 0x87, 0x7e, 0x99, 0x61, 0x52, 0x6a, 0x49, 0xa2, 0xa1, 0x7e, 0x41, 0x62, 0x7a, 0x66,
-	0x1e, 0x58, 0x31, 0x54, 0xad, 0x31, 0x91, 0xde, 0x29, 0x48, 0x2c, 0x4a, 0xcc, 0x85, 0x5a, 0xa0,
-	0x24, 0xc2, 0x25, 0x14, 0x08, 0x32, 0x36, 0x00, 0x2c, 0x18, 0x94, 0x5a, 0x58, 0x9a, 0x5a, 0x5c,
-	0xa2, 0x94, 0xc1, 0x25, 0x8c, 0x22, 0x5a, 0x5c, 0x90, 0x9f, 0x57, 0x9c, 0x2a, 0x14, 0xc8, 0xc5,
-	0x06, 0xd1, 0x2c, 0xc1, 0xa8, 0xc0, 0xa8, 0xc1, 0x6d, 0xa4, 0xa7, 0x47, 0x5c, 0x68, 0xe8, 0x41,
-	0xcc, 0x71, 0xe2, 0x3c, 0x71, 0x4f, 0x9e, 0x61, 0xc5, 0xf3, 0x0d, 0x5a, 0x8c, 0x41, 0x50, 0x83,
-	0x8c, 0x8e, 0x31, 0x72, 0xb1, 0x82, 0xad, 0x12, 0xda, 0xc3, 0xc8, 0xc5, 0x06, 0x51, 0x27, 0x64,
-	0x45, 0xac, 0xb9, 0x98, 0x4e, 0x97, 0xb2, 0x26, 0x4b, 0x2f, 0xc4, 0x83, 0x4a, 0x96, 0x4d, 0x97,
-	0x9f, 0x4c, 0x66, 0x32, 0x16, 0x32, 0x84, 0x86, 0x9c, 0x6e, 0x71, 0x4a, 0xb6, 0x2e, 0x48, 0x93,
-	0x2e, 0xa1, 0xe0, 0x74, 0xf2, 0x38, 0xf1, 0x48, 0x8e, 0xf1, 0xc2, 0x23, 0x39, 0xc6, 0x07, 0x8f,
-	0xe4, 0x18, 0x27, 0x3c, 0x96, 0x63, 0xb8, 0xf0, 0x58, 0x8e, 0xe1, 0xc6, 0x63, 0x39, 0x86, 0x28,
-	0x3d, 0xac, 0x66, 0x55, 0x60, 0x31, 0xad, 0xa4, 0xb2, 0x20, 0xb5, 0x38, 0x89, 0x0d, 0x1c, 0x33,
-	0xc6, 0x80, 0x00, 0x00, 0x00, 0xff, 0xff, 0x7b, 0xb9, 0x82, 0x5a, 0x9f, 0x02, 0x00, 0x00,
+	// 528 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x54, 0x41, 0x6b, 0x13, 0x41,
+	0x14, 0xce, 0x04, 0x8d, 0x66, 0x04, 0xd1, 0x31, 0xd6, 0xb2, 0xc4, 0xad, 0x2c, 0x28, 0x52, 0xc8,
+	0x0e, 0x9b, 0x20, 0x6a, 0x6d, 0x45, 0x82, 0xa2, 0x48, 0x0f, 0x76, 0xf5, 0xe4, 0x25, 0x4c, 0xba,
+	0xc3, 0x3a, 0x34, 0xd9, 0xb7, 0xcd, 0x4c, 0x82, 0xa1, 0xf4, 0xe2, 0x2f, 0x10, 0xfc, 0x13, 0x1e,
+	0xfd, 0x01, 0x9e, 0xa5, 0xde, 0x2a, 0x5e, 0x3c, 0x89, 0x24, 0x82, 0x3f, 0xc0, 0x3f, 0x20, 0x99,
+	0x19, 0xa3, 0x49, 0x2a, 0x26, 0xdb, 0xcb, 0xee, 0xf0, 0xe6, 0x7d, 0xdf, 0xfb, 0xbe, 0xf7, 0xde,
+	0x2e, 0xae, 0x6e, 0x83, 0x6c, 0x83, 0x94, 0xd1, 0x8e, 0x82, 0x08, 0x5a, 0x42, 0x2a, 0x3a, 0x1b,
+	0xe9, 0x05, 0x74, 0xb7, 0xcb, 0x3b, 0x7d, 0x3f, 0xed, 0x80, 0x02, 0x72, 0x6d, 0x26, 0xc3, 0x9f,
+	0x8d, 0xf4, 0x02, 0xe7, 0x3c, 0x6b, 0x8b, 0x04, 0xa8, 0x7e, 0x1a, 0xa8, 0xb3, 0x6a, 0x12, 0x69,
+	0x93, 0x49, 0x6e, 0x38, 0x69, 0x2f, 0x68, 0x72, 0xc5, 0x02, 0x9a, 0xb2, 0x58, 0x24, 0x4c, 0x09,
+	0x48, 0x6c, 0x6e, 0x6d, 0x4e, 0x69, 0x29, 0xeb, 0xb0, 0xb6, 0xb4, 0xa0, 0x52, 0x0c, 0x31, 0xe8,
+	0x23, 0x1d, 0x9d, 0x6c, 0xb4, 0x1c, 0x03, 0xc4, 0x2d, 0x4e, 0x59, 0x2a, 0x28, 0x4b, 0x12, 0x50,
+	0xba, 0x8e, 0xc5, 0x78, 0x25, 0x4c, 0xb6, 0x46, 0x52, 0x9e, 0x68, 0xa2, 0x90, 0xef, 0x76, 0xb9,
+	0x54, 0xde, 0x0b, 0x7c, 0x61, 0x22, 0x2a, 0x53, 0x48, 0x24, 0x27, 0x5b, 0xb8, 0x60, 0x0a, 0x2e,
+	0xa3, 0x2b, 0xe8, 0xfa, 0x99, 0xaa, 0xef, 0xcf, 0xd7, 0x0d, 0xdf, 0xf0, 0xd4, 0x8b, 0x07, 0x5f,
+	0x57, 0x72, 0x6f, 0x7f, 0xbc, 0x5b, 0x45, 0xa1, 0x25, 0xf2, 0x2e, 0xe1, 0x8b, 0xba, 0xd2, 0xa6,
+	0x90, 0xea, 0x19, 0x44, 0x30, 0x96, 0xb0, 0x8c, 0x97, 0xa6, 0x2f, 0x8c, 0x0a, 0xef, 0xaa, 0x15,
+	0xf7, 0x90, 0xeb, 0x0b, 0x0b, 0x20, 0x67, 0x71, 0x5e, 0x44, 0x5a, 0xd8, 0x89, 0x30, 0x2f, 0x22,
+	0x6f, 0x09, 0x97, 0x26, 0xd3, 0x2c, 0x7c, 0x1d, 0x97, 0xff, 0x8e, 0xcb, 0x7a, 0xff, 0xa9, 0x62,
+	0xaa, 0xfb, 0xbb, 0x30, 0x29, 0xe3, 0xe2, 0x36, 0xb4, 0xd3, 0x16, 0x57, 0xdc, 0xd0, 0x9d, 0x0e,
+	0xff, 0x04, 0xbc, 0x15, 0x7c, 0xf9, 0x1f, 0x68, 0x43, 0x5f, 0xfd, 0x54, 0xc0, 0x27, 0x75, 0x06,
+	0x79, 0x8f, 0x70, 0xc1, 0x18, 0x27, 0x6b, 0xf3, 0x36, 0x6a, 0x76, 0x16, 0xce, 0x9d, 0x4c, 0x58,
+	0x6b, 0xf6, 0xf6, 0xab, 0xcf, 0xdf, 0xdf, 0xe4, 0x6b, 0x24, 0xb0, 0xeb, 0x53, 0x91, 0xd1, 0x4e,
+	0x65, 0x04, 0xaa, 0xfc, 0x6f, 0xa7, 0xc8, 0x47, 0x84, 0x8b, 0xe3, 0xe6, 0x93, 0x8d, 0x85, 0x54,
+	0x4c, 0x4f, 0xd3, 0xb9, 0x9b, 0x15, 0x6e, 0x7d, 0x6c, 0x68, 0x1f, 0x37, 0xc9, 0x8d, 0x05, 0x7c,
+	0x8c, 0xde, 0x0d, 0xa5, 0xd5, 0x7f, 0x40, 0xf8, 0x94, 0x9d, 0x18, 0x59, 0xac, 0x9f, 0x93, 0x4b,
+	0xe6, 0xac, 0x67, 0x03, 0x5b, 0x17, 0xf7, 0xb4, 0x8b, 0x35, 0x72, 0x6b, 0x01, 0x17, 0x31, 0x37,
+	0x26, 0xe8, 0x9e, 0x88, 0xf6, 0xc9, 0x4f, 0x84, 0xcf, 0x4d, 0xaf, 0x1e, 0xb9, 0x9f, 0x45, 0xd4,
+	0xf4, 0xde, 0x3b, 0x0f, 0x8e, 0xc9, 0x62, 0x3d, 0x86, 0xda, 0xe3, 0x26, 0x79, 0x9c, 0xc1, 0xa3,
+	0x6c, 0x34, 0xfb, 0x0d, 0xa9, 0xf9, 0xe8, 0xde, 0xf8, 0x9b, 0xdb, 0xaf, 0x3f, 0x3a, 0x18, 0xb8,
+	0xe8, 0x70, 0xe0, 0xa2, 0x6f, 0x03, 0x17, 0xbd, 0x1e, 0xba, 0xb9, 0xc3, 0xa1, 0x9b, 0xfb, 0x32,
+	0x74, 0x73, 0xcf, 0xfd, 0x23, 0x8b, 0xbc, 0x3c, 0xa2, 0x8c, 0xea, 0xa7, 0x5c, 0x36, 0x0b, 0xfa,
+	0xaf, 0x57, 0xfb, 0x15, 0x00, 0x00, 0xff, 0xff, 0xd0, 0xb5, 0xf0, 0x3c, 0xfb, 0x05, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -162,6 +419,12 @@ const _ = grpc.SupportPackageIsVersion4
 type QueryClient interface {
 	// Parameters queries the parameters of the module.
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
+	// ListTodos Queries a list of ListTodos items.
+	ListTodos(ctx context.Context, in *QueryListTodosRequest, opts ...grpc.CallOption) (*QueryListTodosResponse, error)
+	// GetTodo Queries a list of GetTodo items.
+	GetTodo(ctx context.Context, in *QueryGetTodoRequest, opts ...grpc.CallOption) (*QueryGetTodoResponse, error)
+	// GetTodosByStatus Queries a list of GetTodosByStatus items.
+	GetTodosByStatus(ctx context.Context, in *QueryGetTodosByStatusRequest, opts ...grpc.CallOption) (*QueryGetTodosByStatusResponse, error)
 }
 
 type queryClient struct {
@@ -181,10 +444,43 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 	return out, nil
 }
 
+func (c *queryClient) ListTodos(ctx context.Context, in *QueryListTodosRequest, opts ...grpc.CallOption) (*QueryListTodosResponse, error) {
+	out := new(QueryListTodosResponse)
+	err := c.cc.Invoke(ctx, "/cosmossdktodolist.cosmossdktodolist.v1.Query/ListTodos", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) GetTodo(ctx context.Context, in *QueryGetTodoRequest, opts ...grpc.CallOption) (*QueryGetTodoResponse, error) {
+	out := new(QueryGetTodoResponse)
+	err := c.cc.Invoke(ctx, "/cosmossdktodolist.cosmossdktodolist.v1.Query/GetTodo", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) GetTodosByStatus(ctx context.Context, in *QueryGetTodosByStatusRequest, opts ...grpc.CallOption) (*QueryGetTodosByStatusResponse, error) {
+	out := new(QueryGetTodosByStatusResponse)
+	err := c.cc.Invoke(ctx, "/cosmossdktodolist.cosmossdktodolist.v1.Query/GetTodosByStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 type QueryServer interface {
 	// Parameters queries the parameters of the module.
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
+	// ListTodos Queries a list of ListTodos items.
+	ListTodos(context.Context, *QueryListTodosRequest) (*QueryListTodosResponse, error)
+	// GetTodo Queries a list of GetTodo items.
+	GetTodo(context.Context, *QueryGetTodoRequest) (*QueryGetTodoResponse, error)
+	// GetTodosByStatus Queries a list of GetTodosByStatus items.
+	GetTodosByStatus(context.Context, *QueryGetTodosByStatusRequest) (*QueryGetTodosByStatusResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
@@ -193,6 +489,15 @@ type UnimplementedQueryServer struct {
 
 func (*UnimplementedQueryServer) Params(ctx context.Context, req *QueryParamsRequest) (*QueryParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Params not implemented")
+}
+func (*UnimplementedQueryServer) ListTodos(ctx context.Context, req *QueryListTodosRequest) (*QueryListTodosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListTodos not implemented")
+}
+func (*UnimplementedQueryServer) GetTodo(ctx context.Context, req *QueryGetTodoRequest) (*QueryGetTodoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTodo not implemented")
+}
+func (*UnimplementedQueryServer) GetTodosByStatus(ctx context.Context, req *QueryGetTodosByStatusRequest) (*QueryGetTodosByStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTodosByStatus not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -217,6 +522,60 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_ListTodos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryListTodosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).ListTodos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cosmossdktodolist.cosmossdktodolist.v1.Query/ListTodos",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).ListTodos(ctx, req.(*QueryListTodosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_GetTodo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetTodoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).GetTodo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cosmossdktodolist.cosmossdktodolist.v1.Query/GetTodo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).GetTodo(ctx, req.(*QueryGetTodoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_GetTodosByStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetTodosByStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).GetTodosByStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cosmossdktodolist.cosmossdktodolist.v1.Query/GetTodosByStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).GetTodosByStatus(ctx, req.(*QueryGetTodosByStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var Query_serviceDesc = _Query_serviceDesc
 var _Query_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "cosmossdktodolist.cosmossdktodolist.v1.Query",
@@ -225,6 +584,18 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Params",
 			Handler:    _Query_Params_Handler,
+		},
+		{
+			MethodName: "ListTodos",
+			Handler:    _Query_ListTodos_Handler,
+		},
+		{
+			MethodName: "GetTodo",
+			Handler:    _Query_GetTodo_Handler,
+		},
+		{
+			MethodName: "GetTodosByStatus",
+			Handler:    _Query_GetTodosByStatus_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -287,6 +658,159 @@ func (m *QueryParamsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *QueryListTodosRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryListTodosRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryListTodosRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryListTodosResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryListTodosResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryListTodosResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetTodoRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetTodoRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetTodoRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Id != 0 {
+		i = encodeVarintQuery(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetTodoResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetTodoResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetTodoResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetTodosByStatusRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetTodosByStatusRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetTodosByStatusRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Completed {
+		i--
+		if m.Completed {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetTodosByStatusResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetTodosByStatusResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetTodosByStatusResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	offset -= sovQuery(v)
 	base := offset
@@ -315,6 +839,66 @@ func (m *QueryParamsResponse) Size() (n int) {
 	_ = l
 	l = m.Params.Size()
 	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryListTodosRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *QueryListTodosResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *QueryGetTodoRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Id != 0 {
+		n += 1 + sovQuery(uint64(m.Id))
+	}
+	return n
+}
+
+func (m *QueryGetTodoResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *QueryGetTodosByStatusRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Completed {
+		n += 2
+	}
+	return n
+}
+
+func (m *QueryGetTodosByStatusResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
 	return n
 }
 
@@ -436,6 +1020,345 @@ func (m *QueryParamsResponse) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryListTodosRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryListTodosRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryListTodosRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryListTodosResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryListTodosResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryListTodosResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetTodoRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetTodoRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetTodoRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetTodoResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetTodoResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetTodoResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetTodosByStatusRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetTodosByStatusRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetTodosByStatusRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Completed", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Completed = bool(v != 0)
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetTodosByStatusResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetTodosByStatusResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetTodosByStatusResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
 		default:
 			iNdEx = preIndex
 			skippy, err := skipQuery(dAtA[iNdEx:])

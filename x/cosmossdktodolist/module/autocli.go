@@ -17,6 +17,27 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Use:       "params",
 					Short:     "Shows the parameters of the module",
 				},
+				{
+					RpcMethod:      "ListTodos",
+					Use:            "list-todos ",
+					Short:          "Query list-todos",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{},
+				},
+
+				{
+					RpcMethod:      "GetTodo",
+					Use:            "get-todo [id]",
+					Short:          "Query get-todo",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+
+				{
+					RpcMethod:      "GetTodosByStatus",
+					Use:            "get-todos-by-status [completed]",
+					Short:          "Query get-todos-by-status",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "completed"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -27,6 +48,30 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				{
 					RpcMethod: "UpdateParams",
 					Skip:      true, // skipped because authority gated
+				},
+				{
+					RpcMethod:      "CreateTodo",
+					Use:            "create-todo [title] [description] [priority]",
+					Short:          "Send a create-todo tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "title"}, {ProtoField: "description"}, {ProtoField: "priority"}},
+				},
+				{
+					RpcMethod:      "UpdateTodo",
+					Use:            "update-todo [id] [title] [description] [priority]",
+					Short:          "Send a update-todo tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}, {ProtoField: "title"}, {ProtoField: "description"}, {ProtoField: "priority"}},
+				},
+				{
+					RpcMethod:      "CompleteTodo",
+					Use:            "complete-todo [id]",
+					Short:          "Send a complete-todo tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+				{
+					RpcMethod:      "DeleteTodo",
+					Use:            "delete-todo [id]",
+					Short:          "Send a delete-todo tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},

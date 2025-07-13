@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package cosmossdktodolist.cosmossdktodolist.v1;
 
 import "amino/amino.proto";
@@ -16,6 +17,18 @@ service Msg {
   // UpdateParams defines a (governance) operation for updating the module
   // parameters. The authority defaults to the x/gov module account.
   rpc UpdateParams(MsgUpdateParams) returns (MsgUpdateParamsResponse);
+
+  // CreateTodo defines the CreateTodo RPC.
+  rpc CreateTodo(MsgCreateTodo) returns (MsgCreateTodoResponse);
+
+  // UpdateTodo defines the UpdateTodo RPC.
+  rpc UpdateTodo(MsgUpdateTodo) returns (MsgUpdateTodoResponse);
+
+  // CompleteTodo defines the CompleteTodo RPC.
+  rpc CompleteTodo(MsgCompleteTodo) returns (MsgCompleteTodoResponse);
+
+  // DeleteTodo defines the DeleteTodo RPC.
+  rpc DeleteTodo(MsgDeleteTodo) returns (MsgDeleteTodoResponse);
 }
 
 // MsgUpdateParams is the Msg/UpdateParams request type.
@@ -27,7 +40,7 @@ message MsgUpdateParams {
   string authority = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
 
   // params defines the module parameters to update.
-  //
+
   // NOTE: All parameters must be supplied.
   Params params = 2 [
     (gogoproto.nullable) = false,
@@ -38,3 +51,48 @@ message MsgUpdateParams {
 // MsgUpdateParamsResponse defines the response structure for executing a
 // MsgUpdateParams message.
 message MsgUpdateParamsResponse {}
+
+// MsgCreateTodo defines the MsgCreateTodo message.
+message MsgCreateTodo {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  string title = 2;
+  string description = 3;
+  uint64 priority = 4;
+}
+
+// MsgCreateTodoResponse defines the MsgCreateTodoResponse message.
+message MsgCreateTodoResponse {}
+
+// MsgUpdateTodo defines the MsgUpdateTodo message.
+message MsgUpdateTodo {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  uint64 id = 2;
+  string title = 3;
+  string description = 4;
+  uint64 priority = 5;
+}
+
+// MsgUpdateTodoResponse defines the MsgUpdateTodoResponse message.
+message MsgUpdateTodoResponse {}
+
+// MsgCompleteTodo defines the MsgCompleteTodo message.
+message MsgCompleteTodo {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  uint64 id = 2;
+}
+
+// MsgCompleteTodoResponse defines the MsgCompleteTodoResponse message.
+message MsgCompleteTodoResponse {}
+
+// MsgDeleteTodo defines the MsgDeleteTodo message.
+message MsgDeleteTodo {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  uint64 id = 2;
+}
+
+// MsgDeleteTodoResponse defines the MsgDeleteTodoResponse message.
+message MsgDeleteTodoResponse {}

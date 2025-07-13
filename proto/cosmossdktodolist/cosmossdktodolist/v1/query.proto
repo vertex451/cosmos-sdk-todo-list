@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package cosmossdktodolist.cosmossdktodolist.v1;
 
 import "amino/amino.proto";
@@ -15,6 +16,21 @@ service Query {
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/cosmos-sdk-todo-list/cosmossdktodolist/v1/params";
   }
+
+  // ListTodos Queries a list of ListTodos items.
+  rpc ListTodos(QueryListTodosRequest) returns (QueryListTodosResponse) {
+    option (google.api.http).get = "/cosmos-sdk-todo-list/cosmossdktodolist/v1/list_todos";
+  }
+
+  // GetTodo Queries a list of GetTodo items.
+  rpc GetTodo(QueryGetTodoRequest) returns (QueryGetTodoResponse) {
+    option (google.api.http).get = "/cosmos-sdk-todo-list/cosmossdktodolist/v1/get_todo/{id}";
+  }
+
+  // GetTodosByStatus Queries a list of GetTodosByStatus items.
+  rpc GetTodosByStatus(QueryGetTodosByStatusRequest) returns (QueryGetTodosByStatusResponse) {
+    option (google.api.http).get = "/cosmos-sdk-todo-list/cosmossdktodolist/v1/get_todos_by_status/{completed}";
+  }
 }
 
 // QueryParamsRequest is request type for the Query/Params RPC method.
@@ -28,3 +44,25 @@ message QueryParamsResponse {
     (amino.dont_omitempty) = true
   ];
 }
+
+// QueryListTodosRequest defines the QueryListTodosRequest message.
+message QueryListTodosRequest {}
+
+// QueryListTodosResponse defines the QueryListTodosResponse message.
+message QueryListTodosResponse {}
+
+// QueryGetTodoRequest defines the QueryGetTodoRequest message.
+message QueryGetTodoRequest {
+  uint64 id = 1;
+}
+
+// QueryGetTodoResponse defines the QueryGetTodoResponse message.
+message QueryGetTodoResponse {}
+
+// QueryGetTodosByStatusRequest defines the QueryGetTodosByStatusRequest message.
+message QueryGetTodosByStatusRequest {
+  bool completed = 1;
+}
+
+// QueryGetTodosByStatusResponse defines the QueryGetTodosByStatusResponse message.
+message QueryGetTodosByStatusResponse {}

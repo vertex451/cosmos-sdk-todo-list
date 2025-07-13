@@ -1,9 +1,13 @@
 package cosmossdktodolist
 
 import (
+	"math/rand"
+
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	"github.com/cosmos/cosmos-sdk/x/simulation"
 
+	cosmossdktodolistsimulation "cosmos-sdk-todo-list/x/cosmossdktodolist/simulation"
 	"cosmos-sdk-todo-list/x/cosmossdktodolist/types"
 )
 
@@ -25,6 +29,67 @@ func (am AppModule) RegisterStoreDecoder(_ simtypes.StoreDecoderRegistry) {}
 // WeightedOperations returns the all the gov module operations with their respective weights.
 func (am AppModule) WeightedOperations(simState module.SimulationState) []simtypes.WeightedOperation {
 	operations := make([]simtypes.WeightedOperation, 0)
+	const (
+		opWeightMsgCreateTodo          = "op_weight_msg_cosmossdktodolist"
+		defaultWeightMsgCreateTodo int = 100
+	)
+
+	var weightMsgCreateTodo int
+	simState.AppParams.GetOrGenerate(opWeightMsgCreateTodo, &weightMsgCreateTodo, nil,
+		func(_ *rand.Rand) {
+			weightMsgCreateTodo = defaultWeightMsgCreateTodo
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCreateTodo,
+		cosmossdktodolistsimulation.SimulateMsgCreateTodo(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgUpdateTodo          = "op_weight_msg_cosmossdktodolist"
+		defaultWeightMsgUpdateTodo int = 100
+	)
+
+	var weightMsgUpdateTodo int
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdateTodo, &weightMsgUpdateTodo, nil,
+		func(_ *rand.Rand) {
+			weightMsgUpdateTodo = defaultWeightMsgUpdateTodo
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgUpdateTodo,
+		cosmossdktodolistsimulation.SimulateMsgUpdateTodo(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgCompleteTodo          = "op_weight_msg_cosmossdktodolist"
+		defaultWeightMsgCompleteTodo int = 100
+	)
+
+	var weightMsgCompleteTodo int
+	simState.AppParams.GetOrGenerate(opWeightMsgCompleteTodo, &weightMsgCompleteTodo, nil,
+		func(_ *rand.Rand) {
+			weightMsgCompleteTodo = defaultWeightMsgCompleteTodo
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCompleteTodo,
+		cosmossdktodolistsimulation.SimulateMsgCompleteTodo(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgDeleteTodo          = "op_weight_msg_cosmossdktodolist"
+		defaultWeightMsgDeleteTodo int = 100
+	)
+
+	var weightMsgDeleteTodo int
+	simState.AppParams.GetOrGenerate(opWeightMsgDeleteTodo, &weightMsgDeleteTodo, nil,
+		func(_ *rand.Rand) {
+			weightMsgDeleteTodo = defaultWeightMsgDeleteTodo
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgDeleteTodo,
+		cosmossdktodolistsimulation.SimulateMsgDeleteTodo(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+
 	return operations
 }
 
