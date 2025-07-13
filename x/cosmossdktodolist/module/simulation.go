@@ -44,6 +44,21 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		weightMsgCreateTodo,
 		cosmossdktodolistsimulation.SimulateMsgCreateTodo(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
 	))
+	const (
+		opWeightMsgUpdateTodo          = "op_weight_msg_cosmossdktodolist"
+		defaultWeightMsgUpdateTodo int = 100
+	)
+
+	var weightMsgUpdateTodo int
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdateTodo, &weightMsgUpdateTodo, nil,
+		func(_ *rand.Rand) {
+			weightMsgUpdateTodo = defaultWeightMsgUpdateTodo
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgUpdateTodo,
+		cosmossdktodolistsimulation.SimulateMsgUpdateTodo(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
 
 	return operations
 }

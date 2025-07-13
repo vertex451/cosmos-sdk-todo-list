@@ -34,6 +34,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Send a create-todo tx",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "title"}, {ProtoField: "description"}, {ProtoField: "priority"}},
 				},
+				{
+					RpcMethod:      "UpdateTodo",
+					Use:            "update-todo [id] [title] [description] [priority]",
+					Short:          "Send a update-todo tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}, {ProtoField: "title"}, {ProtoField: "description"}, {ProtoField: "priority"}},
+				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
 		},
